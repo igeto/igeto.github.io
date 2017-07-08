@@ -2244,6 +2244,7 @@ function initMap() {
                                     }
                                 }
                             );
+                            +
                             hospitals.sort(compare);
                             console.log(hospitals);
                             if(city.gynecologists > 0)

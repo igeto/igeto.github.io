@@ -6,6 +6,8 @@ let transfuziologija = 0;
 let gynecologistExplanation = `<p>Симулацијата ја препорачува оваа најблиска здравствена установа до вашето место на живеење, 
 каде што може да ги добиете поголемиот број од здравствените услуги.</p>`;
 let oneTest = (hospitals, contentString) => {
+    hospitals.sort(compare);
+                            console.log(hospitals);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
 
     for (let i = 0; i < hospitals.length; i++) {
@@ -35,6 +37,8 @@ let oneTest = (hospitals, contentString) => {
     $('#travelingModal').modal('show');
 };
 let twoTests = (testOne, testTwo, contentString) => {
+    hospitals.sort(compare);
+                            console.log(hospitals);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
         let firstTest = 0;
         let secondTest = 0;
