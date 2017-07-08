@@ -2255,10 +2255,10 @@ function initMap() {
                 } else {
                     alert('Адресата не е пронајдена, обидете се повторно');
                     municipalityChosen = false;
-                    hospitals = [];
+                    $gameContent.hide();
+                    $gameContent.goTo(1700);
                 }
             });
-            address = "";
         };
         
         let hospitalsFirstHalf = [
