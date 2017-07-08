@@ -1316,7 +1316,13 @@ function initMap() {
             new google.maps.LatLng(42.06216, 22.72104), new google.maps.LatLng(42.06266, 22.71948), new google.maps.LatLng(42.06371, 22.71801),
             new google.maps.LatLng(42.06527, 22.71757),
         ];
-
+        function compare(a,b) {
+            if (a.distance < b.distance)
+                return -1;
+            if (a.distance > b.distance)
+                return 1;
+            return 0;
+        };
         let imaGinekolog = `<p>Честитки , во вашата општина има гинеколог, ако го закажете вашиот преглед вие ќе бидете дел од една третина од жените во Македонија кои редовно посетуваат гинеколог.</p> 
             <p><i>Дали сте знаеле дека од <strong>80</strong> општини во Македонија, во <strong>46</strong> нема ниту еден матичен гинеколог,  а во <strong>24</strong> иако има, бројот на матични гинеколози не е доволен за сите жени во општината.</i></p> 
             <p><i>Според демографските стандарди кои ги одредила минатата влада, потребно е да има еден матичен гинеколог на 3 илјади жени постари од 14 години.</i></p>`;
@@ -2587,8 +2593,10 @@ function initMap() {
                 
                 $("#addressBtn").off("click");
                 $("#addressBtn").on("click", () => {
-                    if(municipalityChosen === false)
+                    if(municipalityChosen === false){
                     geocodeAddress(geocoder, map, opstina[i]);
+                    // hospitals.sort(compare);
+                    }
                 });     
             });
             google.maps.event.addListener(opstina[i], "mouseout", function(event) {
