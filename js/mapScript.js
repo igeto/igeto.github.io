@@ -2253,7 +2253,9 @@ function initMap() {
                                 gynecologistLocation = city.name;
                         }
                 } else {
-                    //alert('Geocode was not successful for the following reason: ' + status);
+                    alert('Адресата не е пронајдена, обидете се повторно');
+                    municipalityChosen = false;
+                    hospitals = [];
                 }
             });
             address = "";
