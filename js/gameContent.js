@@ -7,7 +7,7 @@ let gynecologistExplanation = `<p>Симулацијата ја препорач
 каде што може да ги добиете поголемиот број од здравствените услуги.</p>`;
 let oneTest = (hospitals, contentString) => {
     hospitals.sort(compare);
-                            console.log(hospitals);
+    console.log(hospitals);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
 
     for (let i = 0; i < hospitals.length; i++) {

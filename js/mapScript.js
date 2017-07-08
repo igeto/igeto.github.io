@@ -2240,13 +2240,9 @@ function initMap() {
                                             hospitalsSecondHalf[i].distance = results[i].distance.value;
                                         }
                                         hospitals = hospitals.concat(hospitalsFirstHalf).concat(hospitalsSecondHalf);
-                                        hospitals.sort(compare);
                                     }
                                 }
                             );
-                            +
-                            hospitals.sort(compare);
-                            console.log(hospitals);
                             if(city.gynecologists > 0)
                                 gynecologistLocation = city.name;
                             municipalityChosen = true;
