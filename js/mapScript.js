@@ -2585,11 +2585,13 @@ function initMap() {
                 $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
 
                 $("#gameContent").removeClass("hide");
-                $("#addressModal").modal("show");
-                $("#addressBtn").off("click");
-                $("#addressBtn").on("click", () => {
-                    geocodeAddress(geocoder, map, opstina[i]);
-                });             
+                if(municipalityChosen === false){
+                    $("#addressModal").modal("show");
+                    $("#addressBtn").off("click");
+                    $("#addressBtn").on("click", () => {
+                        geocodeAddress(geocoder, map, opstina[i]);
+                    });
+                }      
             });
             google.maps.event.addListener(opstina[i], "mouseout", function(event) {
                 this.setOptions({ fillColor: '#7647b7' })
