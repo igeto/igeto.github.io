@@ -1,0 +1,264 @@
+.mainHeader {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.fragment {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 10px;
+}
+
+.fragment::before {
+    content: " ";
+    width: 2px;
+    height: 98%;
+    top: 2%;
+    right: 100.5%;
+    position: absolute;
+    z-index: 2;
+    background-color: #7647b7;
+    opacity: .4;
+}
+#goToGame {
+    color: #7647b7;
+    text-decoration: none;
+}
+#goToGame:hover {
+    color: #4b1c8c;
+    font-size: 1.1rem;
+}
+
+#navHeader {
+    display: inline-block;
+}
+
+.unpickedChoice,
+.unpickedChoice:hover {
+    background-color: grey !important;
+    cursor: default !important;
+}
+
+.pickedChoice,
+.pickedChoice:hover {
+    background-color: #7647b7 !important;
+    cursor: default !important;
+}
+
+.navbar-light {
+    background-color: black;
+}
+
+.slideImg {
+    width: 100%;
+    height: 860px;
+}
+
+#cover {
+    background: url('../Assets/b&w.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 888px;
+    text-align: center;
+    padding-top: 15rem;
+    background-attachment: fixed;
+}
+
+.hide {
+    display: none;
+}
+
+.addressInputExplanation {
+    font-size: 10px;
+}
+
+#gameContent {
+    /*border: 1px solid #7647b7;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btnStart {
+    color: white;
+}
+
+.btnStart:hover {
+    background-color: #4b1c8c;
+}
+
+#gameContent .btn,
+.btnStart {
+    width: 100%;
+    height: 60px;
+    border-radius: 0;
+    padding: 0 -15px;
+    background-color: #7647b7;
+}
+
+#gameContent .btn-primary {
+    border: none;
+}
+
+#gameContent .btn:hover {
+    background-color: #4b1c8c;
+}
+
+#nav {
+    background-color: #7647b7;
+}
+
+#map {
+    position: fixed;
+    margin: 0 auto;
+    width: 602px;
+    height: 500px;
+}
+
+#about {
+    border: 1px solid #7647b7;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#navHeader {
+    color: white
+}
+
+#intro_text {
+    padding:  0 50px 40px;
+    width: 50%;
+}
+
+#card_holder {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.card-text {
+    font-size: 15px;
+}
+
+#dangerOption {
+    font-size: 15px;
+}
+
+.starter {
+    font-family: Knowledge, Source Sans Pro, Arial, Helvetica, sans-serif;
+    /*color: #6b6a6b;*/
+    margin-top: 2rem;
+}
+.fact {
+    background-color: rgb(252, 224, 255);
+    padding: 2% 4% 4% 2.5%;
+    font-style: italic;
+}
+.headerHeadline {
+    margin-bottom: 20px;
+}
+#starterHeader {
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #7647b7;
+    font-size: 40px;
+    margin: 100px 0 0 300px;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.footerInfo li {
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    padding: 0 2.5px;
+}
+
+.footerInfo_elements:before {
+    content: "";
+    position: absolute;
+    width: 1.2px;
+    height: 90%;
+    top: 6%;
+    right: 102%;
+    background-color: #6b6a6b;
+}
+
+footer a {
+    color: #7647b7;
+}
+
+#cardDiv {
+    margin-top: 25px;
+}
+.btnDescriptionExtraLarge {
+    background-color: beige;
+    height: 590px;
+    width: 100%;
+}
+
+.btnDescription {
+    background-color: beige;
+    height: 300px;
+    width: 100%;
+}
+
+.btnDescriptionMedium {
+    background-color: beige;
+    height: 250px;
+    width: 100%;
+}
+
+.btnDescriptionSmall {
+    background-color: beige;
+    height: 200px;
+    width: 100%;
+}
+
+.btnDescriptionLarge {
+    background-color: beige;
+    height: 412px;
+    width: 100%;
+}
+
+.fragment .card {
+    border: none;
+}
+
+#anomalyImg {
+    width: 80%;
+}
+
+@media only screen and (max-width: 1367px) {
+    #cover {
+        height: 620px;
+        padding-top: 125px;
+    }
+}
+
+#cardDiv {
+    margin-top: 550px;
+}
+
+footer {
+    margin-top: 100px;
+}
+
+.btn {
+    box-shadow: 2px 2px 5px black;
+    font-weight: bold;
+    font-size: 15px;
+}

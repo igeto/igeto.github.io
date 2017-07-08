@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мој Матичен Гинеколог</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='icon' href='Assets/favicon.ico' type="image/x-icon">
+    <!--<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=59494488745487001130a1ec&product=inline-share-buttons"></script>-->
+
+</head>
+
+<body>
+
+
+    <!-- Modals -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Одберете општина.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    <p>За да ја започнете играта најпрвин изберете ја вашата стартна општина</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Одбери Општина</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="travelingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#firstAppTravel">Затвори</button>
+            </div>
+            </div>
+        </div>
+    </div>   
+    
+    <div class="modal fade" id="addressModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Внесете ја вашата адреса</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">Адреса:</span>
+                    <input id="address" type="text" class="form-control" placeholder="Улица, број, населено место" aria-describedby="sizing-addon2">
+                </div>
+                <p><span class="addressInputExplanation">* Доколку не ја знаете точната адреса, може да го внесете само името  на населеното место.</span></p>
+            </div>
+            <div class="modal-footer">
+                <button id="addressBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Внеси</button>
+            </div>
+            </div>
+        </div>
+    </div>
+<!--Modals end-->
+
+    <div class="container-fluid mainHeader">
+        <div class='row'>
+            <div class='col'>
+                <!-- Image and text -->
+                <nav class="navbar navbar-light ">
+                    <a class="navbar-brand" href="#">
+                        <img src="Assets/icon-pregnancy.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        <h4 id="navHeader">Мој матичен гинеколог</h4>
+                    </a>
+                </nav>
+                <header id="cover">
+                    <div id="coverCaption">
+                        <!--<div class="container" id="about">-->
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="headerHeadline">
+                                        Во потрага по матичен гинеколог – одберете го вашиот пат
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class = "col-3"></div>
+                                <div class="col-6">
+                                    
+                                    <p><strong>
+                                        Недостигот на гинеколози ги принудува жените во Македонија, особено тие што не живеат во Скопје, да патуваат по десетици километри само за да имаат пристап до матичен гинеколог и уште дополнителни десетици километри до здравствена услуга и безбедна бременост.
+                                    </strong></p>
+                                    <p><strong>
+                                        Компликациите или породувањето со царски рез може да значи и патување од стотини километри до најблиското породувалиште.<p><strong>
+                                    </strong></p>
+                                <br> 
+                                <a id="goToGame" href="#">
+                                    <p>Измери ја твојата бременост во километри</p>
+                                </a>
+                                     
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                        <!--</div>-->
+                    </div>
+                </header>
+            </div>
+        </div>
+    </div>
+    <!--<div class="sharethis-inline-share-buttons"></div>-->
+        <div id="starterHeader"><h1 >Километарски пат во потрага по матичен гинеколог</h1></div>
+    <div class="container" id="intro_text">
+        <p class="starter">Со оваа симулација сакаме да ве поттикнеме да ги облечете чевлите на луѓето коишто очекуваат бебе, а живеат надвор од Скопје, за да увидите колку пат изминува една жена во обидот уредно да ја следи својата бременост, како и сложените процедури кои честопати ја заробуваат во болничките лавиринти.</p>
+        <p class="starter">
+            Недостигот на гинеколози ги принудува жените во Македонија, особено тие што не живеат во Скопје, да патуваат по десетици километри само за да имаат пристап до <strong>матичен гинеколог</strong> и уште дополнителни десетици километри до здравствена услуга и безбедна бременост. 
+        </p>
+        <p class="starter">
+            Компликациите или породувањето со царски рез може да значи и патување од стотини километри до најблиското породувалиште.
+        </p>
+        <p class="starter fact">
+            Податоците од Фондот за здравство покажуваат дека бројот на матични гинеколози изнесува <strong>144</strong>, од кои <strong>43</strong> се во Скопје, но според анализите на невладините организации, па и на минатата Влада, недостигаат уште <strong>150</strong> матични гинеколози. 
+        </p>
+        <p class="starter fact">    
+            Дали сте знаеле дека од вкупно <strong>80 општини</strong> во Македонија во <strong>повеќе од половина</strong> надвор од Скопје жените немаат пристап до матичен гинеколог во близина на местото на живеење. Во речиси <strong>една четвртина</strong> од општините бројот на матични гинеколози не е доволен за да ги задоволи потребите на сите жени.
+        </p>
+        <p class="starter"> 
+            Ситуацијата наскоро ќе се влоши, предупредуваат од Здружението на матични гинеколози, затоа што, како што велат, во наредните пет години се очекува најмалку <strong>20</strong> матични гинеколози да заминат во пензија.
+        </p>
+        <p class="starter">
+            Симулацијата се однесува само на државното здравство, каде што бремените жени имаат право на бесплатни прегледи и во неа не се опфатени приватните здравствени установи или ординации, кои не соработуваат со Фондот за здравство. Сите понудени опции се реални ситуации кои се подготвени во соработка со стручни лица.
+        </p>
+        <p class="starter">
+            Оваа игра има за цел да ви ги прикаже патеките и изборите кои ги имаат жените во текот на следењето на една бременост во времетраење од 280 денови.
+        </p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="offset-4 col-4">
+                <button id="startGame" class="btn btnStart" data-toggle="modal" data-target="#myModal">Што би направила ти?</button>
+            </div>
+        </div>
+        <div id="mapTitle" class="row hide">
+            <div class="offset-4 col-4">
+                <h5>Играј и провери дали во твојата општина има матичен гинеколог.</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="map"></div>
+            </div>
+        </div>
+                
+
+        <div id="gameContent" class="container addBorder hide"></div>
+
+
+        <div id="cardDiv" class="row">
+            <div class="col">
+                <div class="card-deck" id="card__holder">
+                    <div class="card">
+                        <img class="card-img-top" src="Assets/card-group1.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Сведоштва</h4>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Assets/card-group2.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Абортус</h4>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Assets/card-group3.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Системски проблеми</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-muted">
+        <div class="container">
+            <ul class="footerInfo">
+                <li>2017 ©</li>
+                <li class="footerInfo_elements">Coded by</li>
+                <li><a href="https://www.linkedin.com/in/igor-mitkovski-bb781720/">Igor Mitkovski</a></li>
+                <li><a href='https://www.facebook.com/filip.vancevski.7?fref=ufi'>Filip Vanchevski</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mapScript.js"></script>
+    <script type="text/javascript" src="js/gameContent.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQgql9EjR9tCx0TYcrPvtrYWCdKUvEv6w&callback=initMap"></script>
+</body>
+
+</html>
