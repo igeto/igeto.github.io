@@ -2239,12 +2239,13 @@ function initMap() {
                                         for(let i = 0; i < results.length; i++){
                                             hospitalsSecondHalf[i].distance = results[i].distance.value;
                                         }
-                                        hospitals = hospitals.concat(hospitalsFirstHalf).concat(hospitalsSecondHalf);
-                                        hospitals.sort(compare);
-                                        console.log(hospitals)
+                                        
                                     }
                                 }
                             );
+                            hospitals = hospitals.concat(hospitalsFirstHalf).concat(hospitalsSecondHalf);
+                            hospitals.sort(compare);
+                            console.log(hospitals);
                             if(city.gynecologists > 0)
                                 gynecologistLocation = city.name;
                             municipalityChosen = true;
