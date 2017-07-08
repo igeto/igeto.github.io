@@ -171,7 +171,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #7647b7;
     font-size: 40px;
-    margin: 100px 0 0 300px;
+    margin: 5% 25% 1%;
 }
 
 footer {
@@ -248,7 +248,11 @@ footer a {
         padding-top: 125px;
     }
 }
-
+@media only screen and (max-width: 1600px) {
+    #starterHeader {
+        margin: 5% 19% 1%;
+    }
+}
 #cardDiv {
     margin-top: 550px;
 }
