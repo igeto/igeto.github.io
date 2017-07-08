@@ -12,11 +12,10 @@ function compare(a,b) {
                 return 1;
             return 0;
         };
-
 let oneTest = (hospitals, contentString) => {
     hospitals.sort(compare);
     for(let i = 0; i < hospitals.length; i++)
-    console.log(hospitals);
+    console.log(hospitals[i]);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
 
     for (let i = 0; i < hospitals.length; i++) {
@@ -47,7 +46,6 @@ let oneTest = (hospitals, contentString) => {
 };
 let twoTests = (testOne, testTwo, contentString) => {
     hospitals.sort(compare);
-                            console.log(hospitals);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
         let firstTest = 0;
         let secondTest = 0;
@@ -100,6 +98,7 @@ let twoTests = (testOne, testTwo, contentString) => {
         $('#travelingModal').modal('show');
 };
 let threeTests = () => {
+    hospitals.sort(compare);
     totalDistanceTraveledToGynecologist += hospitals[0].distance * 2;
     laboratorija = 0;
     mikrobiologija = 0;
@@ -177,6 +176,7 @@ let threeTests = () => {
     $('#travelingModal').modal('show');
 };
 let abortion = (hospitals, contentString) => {
+    hospitals.sort(compare);
     for (let i = 0; i < hospitals.length; i++) {
         let foundClosest = false;
         let distanceTraveled = 0;
@@ -204,6 +204,7 @@ let abortion = (hospitals, contentString) => {
     $('#travelingModal').modal('show');
 };
 let abortionFinal = (hospitals, contentString) => {
+    hospitals.sort(compare);
     for (let i = 0; i < hospitals.length; i++) {
         let foundClosest = false;
         let distanceTraveled = 0;
@@ -232,6 +233,7 @@ let abortionFinal = (hospitals, contentString) => {
     $('#travelingModal').modal('show');
 };
 let final = (hospitals, contentString) => {
+    hospitals.sort(compare);
     for (let i = 0; i < hospitals.length; i++) {
         let foundClosest = false;
         let distanceTraveled = 0;

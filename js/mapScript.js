@@ -1668,7 +1668,7 @@ function initMap() {
                 women: "645"
             }),
             new google.maps.Polygon({
-                name: "Маврово и Ростуше",
+                name: "Маврово",
                 paths: Mavrovo,
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
@@ -2170,14 +2170,6 @@ function initMap() {
                 women: "8.528"
             }),
         ];
-        
-        function compare(a,b) {
-            if (a.distance < b.distance)
-                return -1;
-            if (a.distance > b.distance)
-                return 1;
-            return 0;
-        };
         (function($) {
             $.fn.goTo = function(x) {
                 $('html, body').animate({
@@ -2595,7 +2587,6 @@ function initMap() {
                 $("#addressBtn").on("click", () => {
                     if(municipalityChosen === false){
                     geocodeAddress(geocoder, map, opstina[i]);
-                    // hospitals.sort(compare);
                     }
                 });     
             });
