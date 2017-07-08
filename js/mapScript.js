@@ -2239,11 +2239,11 @@ function initMap() {
                                         for(let i = 0; i < results.length; i++){
                                             hospitalsSecondHalf[i].distance = results[i].distance.value;
                                         }
-                                        
+                                        hospitals = hospitals.concat(hospitalsFirstHalf).concat(hospitalsSecondHalf);
+                                        hospitals.sort(compare);
                                     }
                                 }
                             );
-                            hospitals = hospitals.concat(hospitalsFirstHalf).concat(hospitalsSecondHalf);
                             hospitals.sort(compare);
                             console.log(hospitals);
                             if(city.gynecologists > 0)
@@ -2585,13 +2585,14 @@ function initMap() {
                 $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
 
                 $("#gameContent").removeClass("hide");
-                if(municipalityChosen === false){
+                if(municipalityChosen === false)
                     $("#addressModal").modal("show");
-                    $("#addressBtn").off("click");
-                    $("#addressBtn").on("click", () => {
-                        geocodeAddress(geocoder, map, opstina[i]);
-                    });
-                }      
+                
+                $("#addressBtn").off("click");
+                $("#addressBtn").on("click", () => {
+                    if(municipalityChosen === false)
+                    geocodeAddress(geocoder, map, opstina[i]);
+                });     
             });
             google.maps.event.addListener(opstina[i], "mouseout", function(event) {
                 this.setOptions({ fillColor: '#7647b7' })
