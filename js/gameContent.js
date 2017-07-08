@@ -5,6 +5,14 @@ let mikrobiologija = 0;
 let transfuziologija = 0;
 let gynecologistExplanation = `<p>Симулацијата ја препорачува оваа најблиска здравствена установа до вашето место на живеење, 
 каде што може да ги добиете поголемиот број од здравствените услуги.</p>`;
+function compare(a,b) {
+            if (a.distance < b.distance)
+                return -1;
+            if (a.distance > b.distance)
+                return 1;
+            return 0;
+        };
+
 let oneTest = (hospitals, contentString) => {
     hospitals.sort(compare);
     for(let i = 0; i < hospitals.length; i++)
