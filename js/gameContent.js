@@ -4,7 +4,7 @@ let laboratorija = 0;
 let mikrobiologija = 0;
 let transfuziologija = 0;
 let gynecologistExplanation = `<p>Симулацијата ја препорачува оваа најблиска здравствена установа до вашето место на живеење, 
-каде што може да ги добиете поголемиот број од здравствените услуги.</p>`;
+    каде што може да ги добиете поголемиот број од здравствените услуги.</p>`;
 function compare(a,b) {
             if (a.distance < b.distance)
                 return -1;
@@ -302,7 +302,7 @@ let firstApp = `
 
                 </div>
                     <div class="col-6">
-                        <button id="" class="btn btn-primary appointmentBtn abortBtn isAbortOption">Сакам да абортирам</button>
+                        <button id="abortBtn" class="btn btn-primary appointmentBtn isAbortOption">Сакам да абортирам</button>
                     </div>
                 </div>
             </div>
@@ -1245,6 +1245,29 @@ let abortBtn = `
                 </div>
             </section>
         `;
+let abortBtnFirstApp = `
+            <section class="fragment abortionIntro">
+                <div id="" class="row">
+                    <div class="col">
+                        <div>
+                            <h4>Процедура за абортус</h4>
+                            <p>
+                                Според невладините организации, лекарска пракса е да се почитува процедурата во која се чека најмалку три дена да се состане 
+                                Комисијата која ќе го разгледува вашето барање во државната болница. По 10 десетта недела од бременоста, според законот, жената 
+                                која сака да ја прекине бременоста мора да исполнува услови пропишани со последните измени на законот во 2013 година. 
+                                Комисијата составена од интернист, социјален работник и гинеколог, има право да не одобри прекин на бременост поради субјективна оценка 
+                                дека родилката не ги исполнува законските критериуми.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button id="submitAbortBtn" class="btn btn-primary appointmentBtn">Поднеси барање</button>
+                    </div>
+                </div>
+            </section>
+        `;
 let stopPregnancyBtn = `
             <section class="fragment abortionIntro">
                 <div id="" class="row">
@@ -1812,6 +1835,12 @@ $(() => {
         $(abortBtn).hide().appendTo("#gameContent").fadeIn(2000);
         $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
     });
+    $gameContent.on("click", "#abortBtn", () => {
+        $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
+        $(".abortBtn").addClass("pickedChoice");
+        $(abortBtn).hide().appendTo("#gameContent").fadeIn(2000);
+        $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
+    });
     $gameContent.on("click", ".abortWithAnomalyBtn", () => {
         $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
         $(".abortWithAnomalyBtn").addClass("pickedChoice");
@@ -1925,6 +1954,8 @@ $(() => {
     $gameContent.on("click", ".finishAbortionSecApp", () => {
         $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
         $(".finishAbortionSecApp").removeClass("unpickedChoice").addClass("pickedChoice");
+        currentAppointment === 1 ? 
+        $(finishAbortion).hide().appendTo("#gameContent").fadeIn(2000) :
         $(finishAbortionSecApp).hide().appendTo("#gameContent").fadeIn(2000);
         $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
     })
