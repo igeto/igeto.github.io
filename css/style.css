@@ -212,7 +212,10 @@ body {
     text-align: left;
 }
 .headerHeadline {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+.headerHeadlineTop {
+    margin-bottom: 0;
 }
 #starterHeader {
     display: inline-block;
@@ -314,6 +317,15 @@ footer {
     #starterHeader {
         margin: 5% 16% 1%;
     }
+    .midNum::before {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: .4%;
+    left: 0.1%;
+    top: 0;
+    background-color: rgba(165, 165, 165, .8);
+}
     .midNum::after {
     position: absolute;
     content: " ";
@@ -328,5 +340,8 @@ footer {
     }
     .smallBotMid {
         margin-left: 30%;
+    }
+    .nums {
+        margin-right: 5%;
     }
 }
