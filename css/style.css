@@ -248,10 +248,14 @@ footer {
     background-color: #6b6a6b;
 }
 
-footer a {
+.footerInfo li a {
     color: #7647b7;
+    text-decoration: none;
 }
-
+.footerInfo li a:hover {
+    color: #4b1c8c;
+    font-size: 16px;
+}
 #cardDiv {
     margin-top: 25px;
 }

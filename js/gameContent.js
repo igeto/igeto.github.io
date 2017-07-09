@@ -1838,7 +1838,7 @@ $(() => {
     $gameContent.on("click", "#abortBtn", () => {
         $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
         $(".abortBtn").addClass("pickedChoice");
-        $(abortBtn).hide().appendTo("#gameContent").fadeIn(2000);
+        $(abortBtnFirstApp).hide().appendTo("#gameContent").fadeIn(2000);
         $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
     });
     $gameContent.on("click", ".abortWithAnomalyBtn", () => {
