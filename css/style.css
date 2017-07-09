@@ -76,6 +76,7 @@ body {
 
 .addressInputExplanation {
     font-size: 10px;
+    margin-bottom: 0;
 }
 
 #gameContent {
@@ -84,7 +85,7 @@ body {
     padding-bottom: 15px;
     padding-left: 20px;
     padding-right: 20px;
-    text-align: justify;
+    text-align: left;
 }
 #travelingModal {
     text-align: justify;
@@ -142,6 +143,7 @@ body {
     padding:  0 50px 40px;
     width: 50%;
     text-align: justify;
+    font-family: 'Roboto', sans-serif;
 }
 
 #card_holder {
@@ -158,9 +160,50 @@ body {
 }
 
 .starter {
-    font-family: Knowledge, Source Sans Pro, Arial, Helvetica, sans-serif;
+    /*font-family: Knowledge, Source Sans Pro, Arial, Helvetica, sans-serif;*/
     /*color: #6b6a6b;*/
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+.bigNum {
+    font-size: 4.5rem;
+    color: #7647b7;
+    margin: 0 25% 0;
+    text-align: center;
+}
+.smallTop {
+    font-size: .7rem;
+    margin-left: 32%;
+    text-align: center;
+}
+.smallBot {
+    font-size: .7rem;
+    margin-left: 38%;
+    text-align: center;
+}
+.smallTopMid {
+        margin-left: 29%;
+    }
+    .smallBotMid {
+        margin-left: 35%;
+    }
+.midNum {
+    position: relative;
+}
+.midNum::before {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: .4%;
+    background-color: rgba(165, 165, 165, .8);
+}
+.midNum::after {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: .4%;
+    left: 100%;
+    top: 0;
+    background-color: rgba(165, 165, 165, .8);
 }
 .fact {
     background-color: rgba(252, 224, 255, .6);
@@ -173,10 +216,10 @@ body {
 }
 #starterHeader {
     display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #7647b7;
     font-size: 40px;
-    margin: 5% 25% 1%;
+    margin: 5% 23% 1%;
 }
 
 footer {
@@ -249,7 +292,9 @@ footer a {
 #cardDiv {
     margin-top: 550px;
 }
-
+.municipalityData {
+    color: grey;
+}
 footer {
     margin-top: 100px;
 }
@@ -267,6 +312,21 @@ footer {
 }
 @media only screen and (max-width: 1600px) {
     #starterHeader {
-        margin: 5% 19% 1%;
+        margin: 5% 16% 1%;
+    }
+    .midNum::after {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: .4%;
+    left: 110%;
+    top: 0;
+    background-color: rgba(165, 165, 165, .8);
+    }
+    .smallTopMid {
+        margin-left: 25%;
+    }
+    .smallBotMid {
+        margin-left: 30%;
     }
 }

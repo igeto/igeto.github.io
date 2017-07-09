@@ -2565,10 +2565,8 @@ function initMap() {
                     <section class="fragment">
                         <div id="municipality_Info">
                             <h2 id="municipality_name">Општина: ${this.name}</h2>
-                            <h5 id="population">Вкупно население: ${this.population}</h5>
-                            <h5 id="women">Вкупно женско население: ${this.women}</h5>
-                            <h4 id="gynecologists">Број на гинеколози: ${this.gynecologists > 0 ? this.gynecologists  : 
-                                0}</h4>
+                            <p>(<span class="municipalityData">ВКУПНО НАСЕЛЕНИЕ:</span> <strong>${this.population}</strong> / <span class="municipalityData">ЖЕНСКО НАСЕЛЕНИЕ:</span> <strong>${this.women}</strong> / <span class="municipalityData">БРОЈ НА ГИНЕКОЛОЗИ:</span> <strong>${this.gynecologists > 0 ? this.gynecologists  : 
+                                0}</strong>)</p>
                             ${this.gynecologists > 0 ? imaGinekolog : nemaGinekolog}
                             ${this.gynecologists > 0 ? makeFirstApp : chooseNextMunicipality}                            
                         </div>
