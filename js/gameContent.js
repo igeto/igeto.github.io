@@ -2247,14 +2247,9 @@ $(() => {
     $gameContent.on("click", ".finishPregnancy", () => {
         $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
         $(".finishPregnancy").addClass("pickedChoice");
-        let numbers = [1, 2]
-        let number = numbers[Math.floor(Math.random() * numbers.length)];
-
-        if (number == 1) {
-            final(hospitals, endOfPregnancyModalContent);
-            $(finishPregnancyFail).hide().appendTo("#gameContent").fadeIn(2000);
-            $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
-        }
+        final(hospitals, endOfPregnancyModalContent);
+        $(finishPregnancySuccess).hide().appendTo("#gameContent").fadeIn(2000);
+        $('body, html').animate({ scrollTop: $(".fragment").last().offset().top }, 1000);
     });
     $gameContent.on("click", ".anomalyFifthApp", () => {
         $(".fragment :button").prop("disabled", true).addClass("unpickedChoice");
