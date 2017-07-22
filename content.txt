@@ -1,0 +1,51 @@
+About me
+
+Organized and self driven person who likes being challenged. I am hard working
+and diligent. Characteristics I show are responsibility, loyalty, competitiveness.
+I am ambitious and willing to learn, able to work individualy 
+as well as a part of a team, I am easy to communicate with and enthusiastic about 
+new experiences.
+
+Work experience
+
+Lenbil DOOEL - Smetkovodsveno biro
+01.05.2010 - 07.12.2016
+
+Certified junior accountant working on tasks like calculating salaries for employees, 
+calculating taxes for other companies as well as preparing documentation needed
+for founding a new company or making changes to an existing one
+
+Volunteering work
+
+- 1 month EVS in Metz, France
+working as an animator in a summer camp for kids at the age of 6 to 16 promoting
+informal learning on various subjects
+
+- Youth exchange for cultural and traditional differences in Luxembourg
+working in the media team making the presentational video and newsletter
+
+- Youth exchange for journalism and media in Istanbul, Turkey
+working in the media team on a dedicated newspaper and informational video
+
+- Youth seminar in Metz, France working on promotion of social networking and
+youth volunteering as means of informal learning and social inclusion of people 
+with different backgrounds and traditional values
+
+- Youth ixchange in Nevsehir, Turkey Working on promotion of reading books
+and its importance in a vast and fast growing digital world
+
+
+Skills
+
+HTML5, CSS3, Bootstrap4, JavaScript, jQuery, PHP (basic knowledge), 
+
+Education
+
+Student at Seavus Education and Development Center 
+
+Highschool - DSU Taki Daskalo - Languages and art course
+
+
+{scrollspy combined with navbar, try to make fixed navbar after scrolling here's how: 
+https://teamtreehouse.com/community/forum-tip-create-a-sticky-navigation-with-css-and-jquery-2,
+use colapsable items,}
