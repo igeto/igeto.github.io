@@ -2,22 +2,43 @@
     margin: 0;
 }
 
-body {
+body, html {
     height: 100%;
     width: 100%;
 }
+@font-face {
+  font-family: 'Glyphicons Halflings';
 
-html {
-    height: 100%;
-    width: 100%;
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-circle-arrow-down:before {
+  content: "\e134";
+}
+.glyphicon-chevron-down:before {
+  content: "\e114";
+}
+.arrowDown {
+    float: right;
+}
 @keyframes html {
     0% {
         width: 0;
     }
     100% {
-        width: 55%;
+        width: 65%;
     }
 }
 
@@ -26,7 +47,7 @@ html {
         width: 0;
     }
     100% {
-        width: 45%;
+        width: 68%;
     }
 }
 
@@ -35,7 +56,25 @@ html {
         width: 0;
     }
     100% {
-        width: 67%;
+        width: 80%;
+    }
+}
+
+@keyframes csharp {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes sql {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 74%;
     }
 }
 
@@ -44,7 +83,7 @@ html {
         width: 0;
     }
     100% {
-        width: 33%;
+        width: 82%;
     }
 }
 
@@ -53,7 +92,25 @@ html {
         width: 0;
     }
     100% {
-        width: 37%;
+        width: 85%;
+    }
+}
+
+@keyframes mvc {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 54%;
+    }
+}
+
+@keyframes api {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 48%;
     }
 }
 
@@ -75,8 +132,9 @@ header {
 
 .header-card {
     background-color: rgba(0, 0, 0, .4);
-    border-color: rgb(187, 188, 189);
     border-radius: 0;
+    padding: 20px;
+    margin-top: 65px;
     color: rgba(31, 216, 255, .8);
     height: 150px;
     position: relative;
@@ -109,7 +167,7 @@ header {
 }
 
 .nav {
-    margin-left: 24.6%;
+    margin-left: 30%;
 }
 
 
@@ -136,12 +194,11 @@ header {
 }
 
 .about {
-    background-image: url('../img/white-wallpaper.jpg');
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 1);
     font-family: 'Roboto Slab', serif;
     height: auto;
     margin-top: 35px;
-    min-height: 610px;
+    min-height: 710px;
     padding: 30px;
     text-shadow: 1px 1px rgb(20, 20, 20);
 }
@@ -149,7 +206,7 @@ header {
 .about-container {
     background-image: url("../img/metallic.jpg");
     border-radius: 70px;
-    box-shadow: 7px 10px 10px rgba(0, 0, 0, .8);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .4); 
     height: auto;
     min-height: 400px;
     padding: 20px;
@@ -170,7 +227,7 @@ header {
     background-image: url("../img/experiences.jpg");
     font-family: 'Playfair Display', serif;
     height: auto;
-    min-height: 610px;
+    min-height: 710px;
     padding: 5%;
 }
 
@@ -200,7 +257,7 @@ header {
 }
 
 .card-header {
-    background-color: rgb(52, 73, 94);
+    background-color: rgb(20, 10, 40);
     text-decoration: none;
 }
 
@@ -222,15 +279,18 @@ header {
     color: rgb(119, 119, 119);
     font-family: 'Roboto Slab', serif;
     height: auto;
-    min-height: 640px;
+    min-height: 710px;
 }
+.skills-headline h1 {
+    display: inline-block;
+    margin-bottom: 30px;
 
+}
 .skills-content {
     padding-top: 100px;
 }
 
 .skills-title {
-    opacity: .7;
     position: relative;
 }
 
@@ -242,7 +302,7 @@ header {
     border-right: 2px solid rgba(0, 0, 0, .1);
     content: "";
     height: 437px;
-    left: 101%;
+    left: 92.8%;
     position: absolute;
     top: 0;
     z-index: 5;
@@ -286,6 +346,25 @@ header {
     width: 0;
     animation: js 2s linear forwards;
 }
+.csharp_progress-bar:before {
+    background-color: rgb(52, 73, 94);
+    border-radius: 2px;
+    content: "";
+    height: 18px;
+    position: absolute;
+    width: 0;
+    animation: csharp 2s linear forwards;
+}
+
+.sql_progress-bar:before {
+    background-color: rgb(52, 73, 94);
+    border-radius: 2px;
+    content: "";
+    height: 18px;
+    position: absolute;
+    width: 0;
+    animation: sql 2s linear forwards;
+}
 
 .bs_progress-bar:before {
     background-color: rgb(52, 73, 94);
@@ -306,11 +385,33 @@ header {
     width: 0;
     animation: jquery 2s linear forwards;
 }
-.education {
-    height: auto;
-    min-height: 640px;
+
+.mvc_progress-bar:before {
+    background-color: rgb(52, 73, 94);
+    border-radius: 2px;
+    content: "";
+    height: 18px;
+    position: absolute;
+    width: 0;
+    animation: mvc 2s linear forwards;
 }
-.education-title {
+
+.api_progress-bar:before {
+    background-color: rgb(52, 73, 94);
+    border-radius: 2px;
+    content: "";
+    height: 18px;
+    position: absolute;
+    width: 0;
+    animation: api 2s linear forwards;
+}
+
+.projects {
+    height: auto;
+    min-height: 710px;
+    background-color: lightblue;
+}
+.projects-title {
     margin-top: 60px;
     height: 100px;
     /*display: inline-block;
