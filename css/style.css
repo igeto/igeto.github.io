@@ -434,6 +434,9 @@ header {
     .about-container {
         top: 0;
     }
+    .skills-title:after {
+        z-index: -1;
+    }
 }
 
 @media(min-width:767px) {
