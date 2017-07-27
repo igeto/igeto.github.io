@@ -418,6 +418,24 @@ header {
     margin: 0 auto;*/
 }
 
+@media(max-width: 360px) {
+    .card-block {
+        padding: 0;
+    }
+}
+
+@media(max-width: 640px) {
+    .card-title {
+        font-size: 1.9rem;
+    }
+    .card-text{
+        font-size: 1.3rem;
+    }
+    .about-container {
+        top: 0;
+    }
+}
+
 @media(min-width:767px) {
     .navbar {
         /*padding: 20px 0;*/
