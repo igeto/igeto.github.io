@@ -313,42 +313,106 @@
   <!-- API SHOWCASE -->
   <section id="api" class="section">
     <p class="section-kicker">// api design</p>
-    <h2>How I document an endpoint</h2>
-    <p class="section-intro">A representative sample. Every API I ship comes with an OpenAPI spec — if it isn't documented, it doesn't exist.</p>
+    <h2>How I design an endpoint</h2>
+    <p class="section-intro">A worked example covering the full lifecycle — create a resource, survive a retry, fail usefully, notify the caller. Every API I ship comes with an OpenAPI spec: if it isn't documented, it doesn't exist.</p>
 
     <div class="api-card">
       <div class="api-header">
-        <span class="method">GET</span>
-        <code class="endpoint">/api/v1/facilities/{facilityId}/assessments</code>
-        <span class="summary">Returns paginated assessments for one facility</span>
+        <span class="method">POST</span>
+        <code class="endpoint">/api/v1/shipments</code>
+        <span class="summary">Creates a shipment — retry-safe, evented, documented</span>
       </div>
       <div class="api-panels">
         <div class="api-panel">
           <p class="panel-label">REQUEST</p>
-          <pre class="code"><span class="k">curl</span> -H <span class="s">"Authorization: Bearer $TOKEN"</span> \
-  "https://api.example.com/api/v1\
-/facilities/fac_8h2k/assessments\
-?status=verified&amp;limit=2"</pre>
+          <pre class="code"><span class="k">curl</span> -X POST <span class="s">"https://api.example.com\
+/api/v1/shipments"</span> \
+  -H <span class="s">"Authorization: Bearer $TOKEN"</span> \
+  -H <span class="s">"Idempotency-Key: idk_7f3a91c2"</span> \
+  -d <span class="s">'{
+    "reference": "ord_2481",
+    "to": { "city": "Skopje", "country": "MK" },
+    "parcels": [{ "weightKg": 1.2 }]
+  }'</span></pre>
           <div class="params">
-            <div class="param"><code>status</code><span>filter: draft · submitted · verified</span></div>
-            <div class="param"><code>limit</code><span>page size, default 25, max 100</span></div>
-            <div class="param"><code>cursor</code><span>opaque pagination cursor</span></div>
+            <div class="param"><code>Idempotency-Key</code><span>same key + same body → the original result, never a duplicate shipment</span></div>
+            <div class="param"><code>reference</code><span>your order id, echoed back everywhere</span></div>
+            <div class="param"><code>parcels[]</code><span>unknown fields are rejected, not ignored</span></div>
           </div>
         </div>
         <div class="api-panel">
-          <p class="panel-label">RESPONSE — 200 OK</p>
+          <p class="panel-label">RESPONSE — 201 CREATED</p>
+          <pre class="code"><span class="h">HTTP/1.1 201 Created
+Location: /api/v1/shipments/shp_01hq8
+RateLimit-Remaining: 58</span>
+
+{
+  <span class="k">"id"</span>: <span class="s">"shp_01hq8"</span>,
+  <span class="k">"status"</span>: <span class="s">"label_created"</span>,
+  <span class="k">"reference"</span>: <span class="s">"ord_2481"</span>,
+  <span class="k">"tracking"</span>: {
+    <span class="k">"number"</span>: <span class="s">"MK4410882731"</span>,
+    <span class="k">"url"</span>: <span class="s">"https://track.example.com/MK44…"</span>
+  },
+  <span class="k">"createdAt"</span>: <span class="s">"2026-08-11T09:14:00Z"</span>
+}</pre>
+        </div>
+        <div class="api-panel">
+          <p class="panel-label">RESPONSE — 422 UNPROCESSABLE ENTITY</p>
           <pre class="code">{
-  <span class="k">"data"</span>: [{
-    <span class="k">"id"</span>: <span class="s">"asm_01j9x"</span>,
-    <span class="k">"status"</span>: <span class="s">"verified"</span>,
-    <span class="k">"score"</span>: <span class="n">87.4</span>,
-    <span class="k">"verifiedAt"</span>: <span class="s">"2026-07-02T09:14:00Z"</span>
-  }],
-  <span class="k">"meta"</span>: {
-    <span class="k">"nextCursor"</span>: <span class="s">"eyJpZCI6..."</span>,
-    <span class="k">"total"</span>: <span class="n">241</span>
+  <span class="k">"type"</span>: <span class="s">"https://api.example.com/errors\
+/validation"</span>,
+  <span class="k">"title"</span>: <span class="s">"Request failed validation"</span>,
+  <span class="k">"status"</span>: <span class="n">422</span>,
+  <span class="k">"errors"</span>: [{
+    <span class="k">"field"</span>: <span class="s">"parcels[0].weightKg"</span>,
+    <span class="k">"message"</span>: <span class="s">"must be greater than 0"</span>
+  }, {
+    <span class="k">"field"</span>: <span class="s">"to.country"</span>,
+    <span class="k">"message"</span>: <span class="s">"not a supported destination"</span>
+  }]
+}</pre>
+        </div>
+        <div class="api-panel">
+          <p class="panel-label">WEBHOOK — shipment.delivered</p>
+          <pre class="code"><span class="h">POST https://your-app.example.com/hooks
+X-Webhook-Signature: sha256=9f2c41ab…</span>
+
+{
+  <span class="k">"id"</span>: <span class="s">"evt_9k2m"</span>,
+  <span class="k">"type"</span>: <span class="s">"shipment.delivered"</span>,
+  <span class="k">"occurredAt"</span>: <span class="s">"2026-08-14T16:02:11Z"</span>,
+  <span class="k">"data"</span>: {
+    <span class="k">"shipmentId"</span>: <span class="s">"shp_01hq8"</span>,
+    <span class="k">"deliveredTo"</span>: <span class="s">"reception"</span>
   }
 }</pre>
+        </div>
+      </div>
+      <div class="api-notes">
+        <div class="api-note">
+          <p class="note-label">IDEMPOTENCY</p>
+          <p>Timed-out POST? Retry it blindly. Same key returns the stored response — no duplicate side effects.</p>
+        </div>
+        <div class="api-note">
+          <p class="note-label">ERRORS</p>
+          <p>problem+json (RFC 9457) with field-level detail. Machines can parse it; humans can read it.</p>
+        </div>
+        <div class="api-note">
+          <p class="note-label">PAGINATION</p>
+          <p>Opaque cursors on every list endpoint. Offsets lie the moment the data underneath moves.</p>
+        </div>
+        <div class="api-note">
+          <p class="note-label">VERSIONING</p>
+          <p>/v1 in the path. Changes are additive only — anything breaking waits for /v2.</p>
+        </div>
+        <div class="api-note">
+          <p class="note-label">RATE LIMITS</p>
+          <p>RateLimit-* headers on every response, so clients back off before the 429, not after it.</p>
+        </div>
+        <div class="api-note">
+          <p class="note-label">WEBHOOKS</p>
+          <p>HMAC-signed, delivered at-least-once with backoff, and replayable from the event log.</p>
         </div>
       </div>
     </div>

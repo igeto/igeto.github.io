@@ -191,7 +191,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 /* ----------------------------- sections --------------------------------- */
 
-.section { padding: 56px 0; border-top: 1px solid var(--border); }
+.section { padding: 56px 0; border-top: 1px solid var(--border); scroll-margin-top: 64px; }
 .section-kicker { font-family: var(--mono); font-size: 13px; color: var(--accent); margin: 0 0 10px; }
 .section h2 { font-size: 34px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
 .section h2.solo { margin-bottom: 40px; }
@@ -248,7 +248,8 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 .api-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .api-panel { padding: 24px; }
-.api-panel + .api-panel { border-left: 1px solid var(--border-soft); }
+.api-panel:nth-child(even) { border-left: 1px solid var(--border-soft); }
+.api-panel:nth-child(n+3) { border-top: 1px solid var(--border-soft); }
 .panel-label {
   font-family: var(--mono); font-size: 12px; color: var(--ink-muted);
   margin: 0 0 12px; letter-spacing: 0.05em;
@@ -261,11 +262,25 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .code .k { color: var(--code-key); }
 .code .s { color: var(--code-string); }
 .code .n { color: var(--code-number); }
+.code .h { color: oklch(0.66 0.04 145); }
 
 .params { margin-top: 18px; display: grid; gap: 8px; font-size: 13.5px; }
 .param { display: flex; gap: 12px; }
-.param code { font-family: var(--mono); color: var(--accent-soft); min-width: 90px; }
+.param code { font-family: var(--mono); color: var(--accent-soft); min-width: 90px; flex-shrink: 0; }
 .param span { color: var(--ink-mid); }
+
+.api-notes {
+  border-top: 1px solid var(--border-soft);
+  padding: 26px 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 28px;
+}
+.api-note .note-label {
+  font-family: var(--mono); font-size: 11px; color: var(--accent);
+  margin: 0 0 5px; letter-spacing: 0.06em;
+}
+.api-note p:not(.note-label) {
+  margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--ink-mid);
+}
 
 /* -------------------------------- stack --------------------------------- */
 
@@ -375,7 +390,9 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   .hero-name { font-size: 46px; }
   .hero-tagline { font-size: 20px; }
   .case, .api-panels, .teaching { grid-template-columns: 1fr; }
-  .api-panel + .api-panel { border-left: none; border-top: 1px solid var(--border-soft); }
+  .api-panel:nth-child(even) { border-left: none; }
+  .api-panel + .api-panel { border-top: 1px solid var(--border-soft); }
+  .api-notes { grid-template-columns: 1fr 1fr; }
   .api-header .summary { margin-left: 0; width: 100%; }
   .job { grid-template-columns: 90px 20px 1fr; gap: 12px; }
   .job-period { font-size: 12px; }
