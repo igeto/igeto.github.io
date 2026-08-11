@@ -3,111 +3,71 @@
    Single accent hue (oklch hue 145, green) drives the whole palette.
 --------------------------------------------------------------------------- */
 
+/* Theme: every token is light-dark(light, dark). Which side applies is
+   driven by color-scheme — OS preference by default, or the explicit
+   data-theme attribute set by the nav toggle (persisted in localStorage). */
+
 :root {
-  --bg: oklch(0.985 0.004 145);
-  --bg-translucent: oklch(0.985 0.004 145 / 0.92);
-  --card: oklch(0.995 0.002 145);
-  --card-tint: oklch(0.96 0.02 145);
-  --chip-bg: oklch(0.955 0.012 145);
-  --quote-bg: oklch(0.96 0.008 145);
+  color-scheme: light dark;
 
-  --ink: oklch(0.23 0.012 145);
-  --ink-soft: oklch(0.4 0.015 145);
-  --ink-body: oklch(0.44 0.015 145);
-  --ink-mid: oklch(0.48 0.015 145);
-  --ink-muted: oklch(0.55 0.02 145);
+  --bg: light-dark(oklch(0.985 0.004 145), oklch(0.19 0.012 145));
+  --bg-translucent: light-dark(oklch(0.985 0.004 145 / 0.92), oklch(0.19 0.012 145 / 0.92));
+  --card: light-dark(oklch(0.995 0.002 145), oklch(0.22 0.014 145));
+  --card-tint: light-dark(oklch(0.96 0.02 145), oklch(0.29 0.035 145));
+  --chip-bg: light-dark(oklch(0.955 0.012 145), oklch(0.28 0.02 145));
+  --quote-bg: light-dark(oklch(0.96 0.008 145), oklch(0.25 0.015 145));
+
+  --ink: light-dark(oklch(0.23 0.012 145), oklch(0.93 0.008 145));
+  --ink-soft: light-dark(oklch(0.4 0.015 145), oklch(0.82 0.012 145));
+  --ink-body: light-dark(oklch(0.44 0.015 145), oklch(0.8 0.012 145));
+  --ink-mid: light-dark(oklch(0.48 0.015 145), oklch(0.76 0.015 145));
+  --ink-muted: light-dark(oklch(0.55 0.02 145), oklch(0.68 0.02 145));
   --ink-faint: oklch(0.6 0.02 145);
-  --ink-lede: oklch(0.42 0.015 145);
-  --ink-org: oklch(0.5 0.02 145);
-  --ink-quote: oklch(0.38 0.015 145);
+  --ink-lede: light-dark(oklch(0.42 0.015 145), oklch(0.82 0.012 145));
+  --ink-org: light-dark(oklch(0.5 0.02 145), oklch(0.7 0.02 145));
+  --ink-quote: light-dark(oklch(0.38 0.015 145), oklch(0.85 0.015 145));
 
-  --accent: oklch(0.48 0.14 145);
-  --accent-hover: oklch(0.38 0.14 145);
-  --accent-bright: oklch(0.55 0.16 145);
-  --accent-soft: oklch(0.42 0.1 145);
-  --accent-tag: oklch(0.4 0.09 145);
+  --accent: light-dark(oklch(0.48 0.14 145), oklch(0.74 0.14 145));
+  --accent-hover: light-dark(oklch(0.38 0.14 145), oklch(0.82 0.14 145));
+  --accent-bright: light-dark(oklch(0.55 0.16 145), oklch(0.7 0.15 145));
+  --accent-soft: light-dark(oklch(0.42 0.1 145), oklch(0.74 0.1 145));
+  --accent-tag: light-dark(oklch(0.4 0.09 145), oklch(0.76 0.09 145));
   --accent-glow: oklch(0.72 0.12 145);
   --accent-mint: oklch(0.75 0.12 145);
-  --hl-meta: oklch(0.48 0.1 145);
-  --method-ink: white;
+  --hl-meta: light-dark(oklch(0.48 0.1 145), oklch(0.75 0.1 145));
+  --method-ink: light-dark(white, oklch(0.16 0.02 145));
 
-  --border: oklch(0.9 0.01 145);
-  --border-soft: oklch(0.92 0.01 145);
-  --border-card: oklch(0.89 0.012 145);
-  --border-node: oklch(0.8 0.02 145);
-  --border-edge: oklch(0.87 0.02 145);
-  --border-btn: oklch(0.82 0.03 145);
-  --border-tag: oklch(0.85 0.04 145);
-  --border-dashed: oklch(0.88 0.015 145);
-  --border-dot-ring: oklch(0.8 0.04 145);
-  --dot-gray: oklch(0.75 0.03 145);
+  --border: light-dark(oklch(0.9 0.01 145), oklch(0.3 0.015 145));
+  --border-soft: light-dark(oklch(0.92 0.01 145), oklch(0.28 0.012 145));
+  --border-card: light-dark(oklch(0.89 0.012 145), oklch(0.3 0.015 145));
+  --border-node: light-dark(oklch(0.8 0.02 145), oklch(0.45 0.03 145));
+  --border-edge: light-dark(oklch(0.87 0.02 145), oklch(0.38 0.02 145));
+  --border-btn: light-dark(oklch(0.82 0.03 145), oklch(0.42 0.03 145));
+  --border-tag: light-dark(oklch(0.85 0.04 145), oklch(0.45 0.05 145));
+  --border-dashed: light-dark(oklch(0.88 0.015 145), oklch(0.34 0.02 145));
+  --border-dot-ring: light-dark(oklch(0.8 0.04 145), oklch(0.45 0.04 145));
+  --dot-gray: light-dark(oklch(0.75 0.03 145), oklch(0.52 0.03 145));
 
-  --dark: oklch(0.25 0.015 145);
+  --dark: light-dark(oklch(0.25 0.015 145), oklch(0.155 0.012 145));
   --dark-ink: oklch(0.95 0.01 145);
   --dark-ink-soft: oklch(0.78 0.02 145);
-  --dark-border: oklch(0.45 0.04 145);
+  --dark-border: light-dark(oklch(0.45 0.04 145), oklch(0.42 0.04 145));
   --code-ink: oklch(0.9 0.02 145);
   --code-ink-dim: oklch(0.88 0.03 145);
   --code-key: oklch(0.75 0.12 145);
   --code-string: oklch(0.82 0.08 90);
   --code-number: oklch(0.78 0.1 200);
 
-  --btn-dark: oklch(0.35 0.09 145);
-  --btn-dark-ink: oklch(0.98 0.01 145);
+  --btn-dark: light-dark(oklch(0.35 0.09 145), oklch(0.7 0.14 145));
+  --btn-dark-ink: light-dark(oklch(0.98 0.01 145), oklch(0.17 0.02 145));
   --btn-mail: oklch(0.62 0.15 145);
   --btn-mail-ink: oklch(0.16 0.02 145);
 
   --mono: 'IBM Plex Mono', monospace;
-
-  color-scheme: light dark;
 }
 
-/* ------------------------------ dark theme ------------------------------- */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: oklch(0.19 0.012 145);
-    --bg-translucent: oklch(0.19 0.012 145 / 0.92);
-    --card: oklch(0.22 0.014 145);
-    --card-tint: oklch(0.29 0.035 145);
-    --chip-bg: oklch(0.28 0.02 145);
-    --quote-bg: oklch(0.25 0.015 145);
-
-    --ink: oklch(0.93 0.008 145);
-    --ink-soft: oklch(0.82 0.012 145);
-    --ink-body: oklch(0.8 0.012 145);
-    --ink-mid: oklch(0.76 0.015 145);
-    --ink-muted: oklch(0.68 0.02 145);
-    --ink-faint: oklch(0.6 0.02 145);
-    --ink-lede: oklch(0.82 0.012 145);
-    --ink-org: oklch(0.7 0.02 145);
-    --ink-quote: oklch(0.85 0.015 145);
-
-    --accent: oklch(0.74 0.14 145);
-    --accent-hover: oklch(0.82 0.14 145);
-    --accent-bright: oklch(0.7 0.15 145);
-    --accent-soft: oklch(0.74 0.1 145);
-    --accent-tag: oklch(0.76 0.09 145);
-    --hl-meta: oklch(0.75 0.1 145);
-    --method-ink: oklch(0.16 0.02 145);
-
-    --border: oklch(0.3 0.015 145);
-    --border-soft: oklch(0.28 0.012 145);
-    --border-card: oklch(0.3 0.015 145);
-    --border-node: oklch(0.45 0.03 145);
-    --border-edge: oklch(0.38 0.02 145);
-    --border-btn: oklch(0.42 0.03 145);
-    --border-tag: oklch(0.45 0.05 145);
-    --border-dashed: oklch(0.34 0.02 145);
-    --border-dot-ring: oklch(0.45 0.04 145);
-    --dot-gray: oklch(0.52 0.03 145);
-
-    --dark: oklch(0.155 0.012 145);
-    --dark-border: oklch(0.42 0.04 145);
-    --btn-dark: oklch(0.7 0.14 145);
-    --btn-dark-ink: oklch(0.17 0.02 145);
-  }
-}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 html { scroll-behavior: smooth; }
 
@@ -157,8 +117,20 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 }
 .brand { font-family: var(--mono); font-size: 14px; font-weight: 600; }
 .brand span { color: var(--accent); }
+.nav-right { display: flex; align-items: center; gap: 18px; }
 .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 500; }
 .nav-links a { color: inherit; }
+
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; flex-shrink: 0; padding: 0;
+  border: 1px solid var(--border-btn); border-radius: 50%;
+  background: transparent; color: inherit; cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* ------------------------------- hero ----------------------------------- */
 
@@ -259,8 +231,32 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 /* --------------------------- case studies ------------------------------- */
 
-.cases { display: grid; gap: 28px; }
+.cases-bar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.cases-bar .section-intro { margin-bottom: 24px; }
+.cases-nav { display: flex; gap: 8px; margin-bottom: 24px; }
+.cases-nav button {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--border-btn); background: var(--card);
+  color: inherit; font-family: var(--mono); font-size: 15px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.cases-nav button:hover { border-color: var(--accent); color: var(--accent); }
+
+.cases {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(100%, 900px);
+  gap: 20px; overflow-x: auto; padding-bottom: 14px;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scrollbar-width: thin; scrollbar-color: var(--border-node) transparent;
+}
+.cases::-webkit-scrollbar { height: 8px; }
+.cases::-webkit-scrollbar-thumb { background: var(--border-node); border-radius: 999px; }
+.cases::-webkit-scrollbar-track { background: transparent; }
+.cases-hint {
+  display: none; font-family: var(--mono); font-size: 12px;
+  color: var(--ink-muted); margin: 10px 0 0;
+}
 .case {
+  scroll-snap-align: start; scroll-snap-stop: always;
   border: 1px solid var(--border-card); border-radius: 8px; background: var(--card);
   padding: 32px;
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start;
@@ -459,19 +455,26 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   .contact-card { padding: 32px 24px; }
 }
 
+@media (max-width: 720px) {
+  .site-nav { flex-wrap: wrap; padding: 14px 0; gap: 8px 16px; }
+  .nav-right { flex: 1; justify-content: space-between; min-width: 0; }
+  .nav-links { gap: 14px; flex-wrap: wrap; }
+  .cases-nav { display: none; }
+  .cases-hint { display: block; }
+  .cases { grid-auto-columns: 92%; }
+  /* stack the request-lifecycle diagram vertically; dots flow downward */
+  .diagram-flow { flex-direction: column; gap: 14px; padding: 28px 16px; }
+  .node-stack { width: 100%; align-items: center; }
+  .edge { width: 2px; height: 30px; }
+  .edge-dot { left: -3px; top: 0; --dist: 22px; animation-name: flowdoty; }
+}
+
 @media (max-width: 560px) {
   .container { padding: 0 20px; }
-  .site-nav { flex-wrap: wrap; padding: 14px 0; gap: 8px 16px; }
-  .nav-links { gap: 14px; flex-wrap: wrap; }
   .hero-name { font-size: 40px; }
   .job { grid-template-columns: 74px 20px 1fr; }
   .case { padding: 24px 20px; }
   .api-notes { grid-template-columns: 1fr; }
   .contact-card { padding: 28px 20px; }
   .facts { gap: 24px; }
-  /* stack the request-lifecycle diagram vertically; dots flow downward */
-  .diagram-flow { flex-direction: column; gap: 14px; padding: 28px 16px; }
-  .node-stack { width: 100%; align-items: center; }
-  .edge { width: 2px; height: 30px; }
-  .edge-dot { left: -3px; top: 0; --dist: 22px; animation-name: flowdoty; }
 }
